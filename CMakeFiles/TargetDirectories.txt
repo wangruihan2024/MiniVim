@@ -1,0 +1,3 @@
+/mnt/c/Users/wwx/Desktop/miniVim/CMakeFiles/rebuild_cache.dir
+/mnt/c/Users/wwx/Desktop/miniVim/CMakeFiles/edit_cache.dir
+/mnt/c/Users/wwx/Desktop/miniVim/CMakeFiles/miniVim.dir

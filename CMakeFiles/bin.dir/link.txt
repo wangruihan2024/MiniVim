@@ -1,0 +1,1 @@
+/usr/bin/c++     CMakeFiles/bin.dir/src/ncurses_demo.cpp.o  -o bin/bin  -lcurses 

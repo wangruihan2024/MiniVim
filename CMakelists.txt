@@ -1,0 +1,45 @@
+# specify the minimum version of CMake that is supported
+cmake_minimum_required(VERSION 3.16)
+
+# include a project name
+project(miniVim)
+
+
+# set C++ Version & executable output path
+set(CMAKE_CXX_STANDARD 17)
+set(EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/bin)
+
+# make your compiler aware of header directory
+include_directories(${PROJECT_SOURCE_DIR}/include)
+
+# find & include ncurses library
+find_package(Curses REQUIRED)
+include_directories(${CURSES_INCLUDE_DIR})
+
+# create a variable that includes needed source files
+set(MY_SOURCES
+  ${PROJECT_SOURCE_DIR}/src/main.cpp
+  ${PROJECT_SOURCE_DIR}/src/readin.cpp
+  ${PROJECT_SOURCE_DIR}/src/initialize.cpp
+  ${PROJECT_SOURCE_DIR}/src/normal.cpp
+  ${PROJECT_SOURCE_DIR}/src/insert.cpp
+  ${PROJECT_SOURCE_DIR}/src/commands.cpp
+  ${PROJECT_SOURCE_DIR}/src/cursor.cpp
+  ${PROJECT_SOURCE_DIR}/src/output.cpp
+  ${PROJECT_SOURCE_DIR}/src/savefile.cpp
+  ${PROJECT_SOURCE_DIR}/src/linenumber.cpp
+  ${PROJECT_SOURCE_DIR}/src/write.cpp
+  ${PROJECT_SOURCE_DIR}/src/processcommand.cpp
+  ${PROJECT_SOURCE_DIR}/src/substitute.cpp
+  ${PROJECT_SOURCE_DIR}/src/adaptability.cpp
+  ${PROJECT_SOURCE_DIR}/src/detectmode.cpp  
+  ${PROJECT_SOURCE_DIR}/src/extractfilename.cpp 
+  ${PROJECT_SOURCE_DIR}/include/define.h
+)
+
+# specify an executable, 
+# build from the specified source files
+add_executable(miniVim ${MY_SOURCES})
+
+# link ncurses library with your executable
+target_link_libraries(miniVim ${CURSES_LIBRARY})
